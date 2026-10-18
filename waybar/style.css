@@ -37,6 +37,7 @@ window#waybar {
 #cpu,
 #memory,
 #disk,
+#custom-system-menu,
 #tray,
 #custom-power {
     background: @bg-module;
@@ -174,6 +175,19 @@ window#waybar {
 
 #disk:hover {
     color: @purple-light;
+}
+
+/* System menu (battery on laptop / flash on PC) */
+#custom-system-menu {
+    color: @purple-light;
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+#custom-system-menu:hover {
+    background: @bg-module-hover;
+    color: @purple-main;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
 }
 
 #tray {

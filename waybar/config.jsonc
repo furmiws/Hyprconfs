@@ -21,6 +21,7 @@
         "cpu",
         "memory",
         "disk",
+        "custom/system-menu",
         "tray",
         "custom/power"
     ],
@@ -127,6 +128,12 @@
         "path": "/",
         "tooltip-format": "Root Storage: {used} used / {total} total ({percentage_used}%)\nFree: {free}",
         "on-click": "dolphin"
+    },
+    "custom/system-menu": {
+        "exec": "~/.config/waybar/scripts/system-label.sh",
+        "interval": 30,
+        "on-click": "~/.config/waybar/scripts/system-menu.sh",
+        "tooltip": false
     },
     "tray": {
         "icon-size": 16,
