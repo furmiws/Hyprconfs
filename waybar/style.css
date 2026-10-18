@@ -1,0 +1,209 @@
+/* Black, White & Purple Minimalist Palette */
+@define-color bg-bar          rgba(10, 10, 14, 0.96);
+@define-color bg-module       #171720;
+@define-color bg-module-hover #252533;
+@define-color border-subtle   #262633;
+
+@define-color text-main       #ffffff;
+@define-color text-muted      #66667a;
+
+@define-color purple-main     #a855f7;
+@define-color purple-dark     #7c3aed;
+@define-color purple-light    #c084fc;
+@define-color alert-red       #ef4444;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @bg-bar;
+    color: @text-main;
+    border-bottom: 2px solid @border-subtle;
+}
+
+/* Base styling for modules */
+#custom-launcher,
+#workspaces,
+#clock,
+#pulseaudio,
+#bluetooth,
+#network,
+#cpu,
+#memory,
+#disk,
+#tray,
+#custom-power {
+    background: @bg-module;
+    color: @text-main;
+    padding: 0 12px;
+    margin: 4px 3px;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Launcher / Arch icon - perfectly centered */
+#custom-launcher {
+    padding: 1px 11px 0 11px;
+    margin-left: 8px;
+    color: @purple-main;
+    font-size: 16px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+#custom-launcher:hover {
+    background: @purple-main;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+/* Workspaces - Stars perfectly centered */
+#workspaces {
+    padding: 0 3px;
+    margin: 4px 3px;
+    border: 1px solid @border-subtle;
+}
+
+#workspaces button {
+    padding: 0;
+    min-width: 24px;
+    min-height: 24px;
+    margin: 2px 2px;
+    border-radius: 6px;
+    color: @text-muted;
+    font-size: 15px;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+    background: @bg-module-hover;
+    color: @text-main;
+}
+
+#workspaces button.active {
+    background: @purple-main;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
+
+#workspaces button label {
+    margin: 1px 0 0 0;
+}
+
+/* Center Clock */
+#clock {
+    padding: 0 14px;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+#clock:hover {
+    background: @bg-module-hover;
+    border-color: @purple-main;
+}
+
+/* Right side modules */
+#pulseaudio {
+    color: @text-main;
+}
+
+#pulseaudio.muted {
+    color: @alert-red;
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+#bluetooth {
+    color: @text-main;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+#bluetooth.connected {
+    color: #ffffff;
+    background: @purple-dark;
+    border: 1px solid @purple-main;
+    box-shadow: 0 0 8px rgba(124, 58, 237, 0.4);
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @text-muted;
+    opacity: 0.5;
+}
+
+#network {
+    color: @text-main;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+#network.disconnected,
+#network.disabled {
+    color: @text-muted;
+    opacity: 0.5;
+}
+
+#cpu {
+    color: @text-main;
+}
+
+#cpu:hover {
+    color: @purple-light;
+}
+
+#memory {
+    color: @text-main;
+}
+
+#memory:hover {
+    color: @purple-light;
+}
+
+#disk {
+    color: @text-main;
+}
+
+#disk:hover {
+    color: @purple-light;
+}
+
+#tray {
+    padding: 0 10px;
+}
+
+/* Power button */
+#custom-power {
+    color: @purple-main;
+    font-size: 14px;
+    padding: 0 11px;
+    margin-right: 8px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+#custom-power:hover {
+    background: @alert-red;
+    color: #ffffff;
+    border-color: @alert-red;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+}
+
+/* Tooltip */
+tooltip {
+    background: #0d0d12;
+    border: 1px solid @purple-main;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @text-main;
+    padding: 6px;
+}

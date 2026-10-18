@@ -1,0 +1,140 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "spacing": 4,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "cpu",
+        "memory",
+        "disk",
+        "tray",
+        "custom/power"
+    ],
+    "custom/launcher": {
+        "format": "\udb82\udcc7",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "default": "\u2605",
+            "active": "\u2605",
+            "urgent": "\u2726"
+        },
+        "on-click": "activate"
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%H:%M:%S}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#a855f7'><b>{}</b></span>",
+                "days": "<span color='#ffffff'><b>{}</b></span>",
+                "weeks": "<span color='#c084fc'><b>W{}</b></span>",
+                "weekdays": "<span color='#a855f7'><b>{}</b></span>",
+                "today": "<span color='#000000' background='#a855f7'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "\udb81\udf5f  {volume}%",
+        "format-icons": {
+            "headphone": "\uf025",
+            "hands-free": "\uf590",
+            "headset": "\uf590",
+            "phone": "\uf095",
+            "portable": "\uf095",
+            "car": "\uf1b9",
+            "default": [
+                "\udb81\udd7f",
+                "\udb81\udd80",
+                "\udb81\udd7e"
+            ]
+        },
+        "scroll-step": 5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip-format": "{desc} ({volume}%)"
+    },
+    "bluetooth": {
+        "format": "\udb80\udcaf",
+        "format-disabled": "\udb80\udcb2",
+        "format-off": "\udb80\udcb2",
+        "format-on": "\udb80\udcaf",
+        "format-connected": "\udb80\udcb1",
+        "format-connected-battery": "\udb80\udcb1",
+        "tooltip-format": "Bluetooth Controller\nStatus: {status}",
+        "tooltip-format-connected": "Bluetooth Connected\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "\u2022 {device_alias}",
+        "tooltip-format-enumerate-connected-battery": "\u2022 {device_alias} ({device_battery_percentage}%)",
+        "on-click": "/home/player/.config/rofi/bluetooth-menu.sh",
+        "on-click-right": "bluetoothctl power toggle"
+    },
+    "network": {
+        "format-wifi": "\udb81\udda9",
+        "format-ethernet": "\udb80\ude00",
+        "format-linked": "\udb80\ude00",
+        "format-disconnected": "\udb81\uddaa",
+        "format-disabled": "\udb81\uddaa",
+        "tooltip-format": "Network Connected\nInterface: {ifname}",
+        "tooltip-format-disconnected": "Network Disconnected",
+        "on-click": "/home/player/.config/rofi/wifi-menu.sh",
+        "on-click-right": "nm-connection-editor"
+    },
+    "cpu": {
+        "interval": 3,
+        "format": "\uf2db  {usage}%",
+        "tooltip": true,
+        "on-click": "kitty -e btop"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "\udb80\udf5b  {used:0.1f}/{total:0.0f}GB",
+        "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)\nSwap: {swapUsed:0.1f}GiB / {swapTotal:0.1f}GiB",
+        "on-click": "kitty -e btop"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "\udb80\udeca  {specific_used:0.0f}/{specific_total:0.0f}GB",
+        "unit": "GB",
+        "path": "/",
+        "tooltip-format": "Root Storage: {used} used / {total} total ({percentage_used}%)\nFree: {free}",
+        "on-click": "dolphin"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "custom/power": {
+        "format": "\uf011",
+        "tooltip": false,
+        "on-click": "/home/player/.config/rofi/power-menu.sh"
+    }
+}
