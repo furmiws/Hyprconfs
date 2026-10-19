@@ -1,6 +1,6 @@
 # dotfiles 🌿
 
-My personal configuration files for a **Hyprland** Wayland setup on Arch Linux.
+My personal configuration files for a **Hyprland** Wayland setup on Arch Linux (I haven't tried on others Linux distros yet).
 
 ## 🖥️ Setup
 
@@ -25,10 +25,10 @@ chmod +x install.sh
 ```
 
 The script will:
-- ✅ Check that required apps are installed
+- ✅ Check that required apps are installed.
 - 🔗 Symlink all configs to `~/.config/`
-- 💾 Back up any existing configs before overwriting
-- 🖼️ Set the wallpaper automatically with swww
+- 💾 Back up any existing configs before overwriting.
+- 🖼️ Set the wallpaper automatically with swww.
 
 ---
 
