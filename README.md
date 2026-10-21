@@ -1,6 +1,6 @@
 # dotfiles 🌿
 
-My personal configuration files for a **Hyprland** Wayland setup on Arch Linux (I haven't tried on others Linux distros yet).
+My personal configuration files for a **Hyprland** Wayland setup on Arch Linux & NixOS (I haven't tried on others Linux distros yet).
 
 ## 🖥️ Setup
 
@@ -11,7 +11,7 @@ My personal configuration files for a **Hyprland** Wayland setup on Arch Linux (
 | Launcher | [Rofi](https://github.com/davatorium/rofi) |
 | Notifications | [Dunst](https://dunst-project.org/) |
 | Wallpaper | [swww](https://github.com/LGFae/swww) |
-| OS | Arch Linux |
+| OS | Arch Linux / NixOS |
 
 ---
 
@@ -28,7 +28,8 @@ The script will:
 - ✅ Check that required apps are installed.
 - 🔗 Symlink all configs to `~/.config/`
 - 💾 Back up any existing configs before overwriting.
-- 🖼️ Set the wallpaper automatically with swww.
+- 🖼️ Set the wallpaper automatically with swww (Now its awww).
+- In case something doesn't work, i will appreciate the feedback to fix it, im still new on this so probably you will find some errors, sorry ;3
 
 ---
 
